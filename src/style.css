@@ -27,17 +27,26 @@ p {
 }
 
 .toolbar {
-  gap: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background: #ffffff;
+  border-bottom: 1px solid #d9dee7;
 }
 
-.toolbar button {
-  margin-left: auto;
+
+.toolbar-info,
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .app {
   height: 100%;
   display: grid;
-  grid-template-rows: 64px minmax(0, 1fr);
+  grid-template-rows: 52px minmax(0, 1fr);
 }
 
 .app>header {
@@ -114,7 +123,9 @@ p {
 
 .canvas-area {
   position: relative;
+  min-width: 0;
   overflow: hidden;
+  background-color: #f6f7f9;
 }
 
 .edge-layer {
@@ -128,4 +139,28 @@ p {
 .edge-layer line {
   stroke: #6b7280;
   stroke-width: 2;
+}
+
+.canvas-node.connection-source {
+  color: #9a3412;
+  background: #fff7ed;
+  border-color: #d97706;
+  box-shadow: 0 0 0 2px rgb(217 119 6 / 20%);
+}
+
+.canvas-node.shape-ellipse {
+  border-radius: 50%;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  min-height: 0;
+}
+
+.property-inspector {
+  padding: 16px;
+  overflow-y: auto;
+  background: #ffffff;
+  border-left: 1px solid #d9dee7;
 }
